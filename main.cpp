@@ -64,7 +64,7 @@ int main()
             std::size_t texpos = curLine.find('"');
             string textvar = curLine.substr(pos,texpos-pos);
             curAsmLine = textvar+"db ";
-            curAsmLine = curAsmLine+curLine.substr(texpos)+",0x0";
+            curAsmLine = curAsmLine+curLine.substr(texpos)+",0xa";
             asmFile << curAsmLine << endl;
             curAsmLine = "len"+textvar+"equ $-"+textvar;
             curAsmLine = curAsmLine.substr(0, curAsmLine.find_last_of(':'));

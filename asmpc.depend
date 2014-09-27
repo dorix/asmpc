@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1411844565 source:/home/dorian/Documents/compiler/asmpc/main.cpp
+	<iostream>
+	<fstream>
+

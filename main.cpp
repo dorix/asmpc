@@ -50,7 +50,9 @@ int main()
             string codesec = "SECTION  .text";
             if(curAsmLine.compare(codesec) == 0)
             {
-                curAsmLine = "global _main";
+                curAsmLine = "global _start";
+                asmFile << curAsmLine << endl;
+                curAsmLine = "_start:";
                 asmFile << curAsmLine << endl;
             }
             }
@@ -82,8 +84,8 @@ int main()
             string textvar = curLine.substr(6);
             asmFile << "mov eax,4" << endl;
             asmFile << "mov ebx,1" << endl;
-            asmFile << "mov eax," << textvar << endl;
-            asmFile << "mov eax,len" << textvar << endl;
+            asmFile << "mov ecx," << textvar << endl;
+            asmFile << "mov edx,len" << textvar << endl;
             asmFile << "int 0x80" << endl;
             }
             //---------------------------------------------//

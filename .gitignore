@@ -30,3 +30,7 @@
 *.app
 
 bin/
+
+*.cbp
+*.layout
+*.depend
